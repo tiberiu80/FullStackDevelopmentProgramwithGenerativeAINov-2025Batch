@@ -1,0 +1,4 @@
+merge on local repository and remote repository 
+fork 
+cherry pick 
+merge conflicts 
