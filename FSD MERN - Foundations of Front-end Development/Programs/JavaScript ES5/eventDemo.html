@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/JavaScript">
+        function fun() {
+            console.log("event generated")
+        }
+        function keyUpEvent() {
+            console.log("key up event fired")
+        }
+        function keyDownEvent() {
+            console.log("key down event fired")
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="Click Here" onclick="alert('Hello, Event generated')"/><br/>
+    <input type="button" value="double click" ondblclick="alert('Hello, Event generated, double click')"/><br/>
+    <input type="button" value="call user defined function" onclick="fun()"/>
+    <input type="text" name="fname"
+    onkeyup="keyUpEvent()" onkeydown="keyDownEvent()"/>
+</body>
+</html>
