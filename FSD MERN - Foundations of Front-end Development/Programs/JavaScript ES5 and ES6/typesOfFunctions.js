@@ -42,16 +42,29 @@
 // }
 
 // callback function 
-function greeting(fname,callback){
-    return "Welcome "+callback(fname);
-}
-let maleInfo = function(fname){
-    return "Mr "+fname;
-}
-let femaleInfo = (fname)=>"Miss "+fname;
-console.log(greeting("John",maleInfo))
-console.log(greeting("Neena",femaleInfo))
-console.log(greeting("Raj",function(fname){
-    return "Mr...."+fname;
-}))
-console.log(greeting("Reeta",(fname)=>"Miss "+fname))
+// normal style function with 2nd parameter is callback 
+// function greeting(fname,callback){
+//     return "Welcome "+callback(fname);
+// }
+// // expression style 
+// let maleInfo = function(fname){
+//     return "Mr "+fname;
+// }
+// // arrow style 
+// let femaleInfo = (fname)=>"Miss "+fname;
+
+// console.log(greeting("John",maleInfo))
+// console.log(greeting("Neena",femaleInfo))
+// console.log(greeting("Raj",function(fname){
+//     return "Mr...."+fname;
+// }))
+// console.log(greeting("Reeta",(fname)=>"Miss "+fname))
+
+
+// IIFE function 
+(function(){
+    console.log("IIFE function")
+})();
+
+((a,b)=>console.log(a+b))(10,20)
+console.log("-----------------")
