@@ -60,11 +60,49 @@
 // }))
 // console.log(greeting("Reeta",(fname)=>"Miss "+fname))
 
-
+// (function_body)(functionCall)
 // IIFE function 
-(function(){
-    console.log("IIFE function")
-})();
+// (function(){
+//     console.log("IIFE function")
+//     console.log("Hello I am IIFE")
+// })();
 
-((a,b)=>console.log(a+b))(10,20)
-console.log("-----------------")
+// ((a,b)=>{
+//     console.log(a+b)
+//     console.log("IIFE in arrow");
+// })(10,20)
+
+// console.log("-----------------")
+
+// Closure function 
+function Outer() {
+    let n = 100;            // balance = 5000; private 
+    
+    function Inner() {                  // withdraw , deposit 
+        console.log("n value in inner is "+n)
+        n++;
+    }
+
+    return Inner;   // outer function return inner function 
+}
+let c_inner = Outer();
+console.log(c_inner)
+c_inner();      // we are calling inner function with help of outer 100 +1
+c_inner();              // 101+1
+c_inner();              // 102+1
+
+
+function Bank() {
+    let balance = 5000;
+    return {
+        withdraw(amount) {
+            balance = balance-amount
+        },
+        deposit(amount) {
+            balance = balance+amount
+        }
+    }
+}
+let account = Bank();
+account.withdraw(100)
+account.deposit(50);
